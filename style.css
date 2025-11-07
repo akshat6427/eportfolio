@@ -34,29 +34,52 @@ nav a.active {
 }
 
 
+.container {
+    position: relative;
+    background: radial-gradient(circle at top left, #ffffff 0%, #f0f7ff 100%);
+    padding: 50px;
+    border-radius: 25px;
+    box-shadow: 0 10px 35px rgba(0, 123, 255, 0.25), inset 0 0 25px rgba(255, 255, 255, 0.6);
+    text-align: justify;
+    max-width: 900px;
+    margin: 60px auto;
+    line-height: 1.8;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+/* 🌟 Glowing animated border – runs automatically */
 .container::before {
     content: "";
     position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, #007bff, #00d4ff, #007bff);
+    inset: -3px;
+    background: linear-gradient(60deg, #007bff, #00e0ff, #8f00ff, #007bff);
+    background-size: 400% 400%;
     z-index: -1;
-    border-radius: 20px;
-    opacity: 0.5;
-    animation: borderGlow 5s linear infinite;
+    border-radius: 25px;
+    opacity: 0.8;
+    animation: glowingBorder 6s linear infinite;
 }
 
-@keyframes borderGlow {
-    0% { filter: hue-rotate(0deg); }
-    100% { filter: hue-rotate(360deg); }
+/* 🌤️ Soft glass blur layer */
+.container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.45);
+    z-index: -1;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
 }
 
-.container:hover {
-    transform: scale(1.01);
-    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2);
+/* 🌈 Continuous glowing border animation */
+@keyframes glowingBorder {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
+
 
 
 h1, h2 {
