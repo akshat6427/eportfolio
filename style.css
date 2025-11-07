@@ -33,20 +33,6 @@ nav a.active {
     color: #ffd700;
 }
 
-.container {
-    background: linear-gradient(135deg, #ffffff, #f3f9ff);
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    text-align: justify;
-    max-width: 850px;
-    margin: 40px auto;
-    line-height: 1.7;
-    font-family: "Poppins", sans-serif;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.4s ease;
-}
 
 .container::before {
     content: "";
@@ -264,6 +250,10 @@ header h1 {
 }
 
 
+.about-section:hover {
+  transform: scale(1.01);
+  box-shadow: 0 10px 35px rgba(0, 123, 255, 0.3);
+}
 
 
 
