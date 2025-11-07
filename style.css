@@ -34,13 +34,44 @@ nav a.active {
 }
 
 .container {
-    max-width: 1000px;
-    margin: 30px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #ffffff, #f3f9ff);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+    max-width: 850px;
+    margin: 40px auto;
+    line-height: 1.7;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
 }
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #007bff, #00d4ff, #007bff);
+    z-index: -1;
+    border-radius: 20px;
+    opacity: 0.5;
+    animation: borderGlow 5s linear infinite;
+}
+
+@keyframes borderGlow {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+.container:hover {
+    transform: scale(1.01);
+    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2);
+}
+
 
 h1, h2 {
     margin-bottom: 20px;
