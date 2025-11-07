@@ -1,5 +1,4 @@
-/* style.css */
-
+/* 🌟 RESET & BASE STYLES */
 * {
     margin: 0;
     padding: 0;
@@ -7,49 +6,85 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    background: #f4f4f4;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7;
+    background: linear-gradient(120deg, #eaf4ff, #f9fcff);
     color: #333;
+    overflow-x: hidden;
 }
 
+/* 🌈 HEADER */
 header {
-    background: linear-gradient(to right, #2c3e50, #3498db);
+    background: linear-gradient(to right, #004aad, #00b4ff);
     color: white;
-    padding: 40px 0;
+    padding: 45px 0 30px;
     text-align: center;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
 }
 
 nav a {
-    margin: 0 20px;
+    margin: 0 18px;
     color: white;
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
+    font-weight: 600;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 nav a:hover,
 nav a.active {
     color: #ffd700;
+    transform: scale(1.1);
 }
 
+/* 📸 PROFILE PHOTO SECTION */
+.photo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
 
+.profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid #00b4ff;
+    object-fit: cover;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 30px rgba(0, 180, 255, 0.4);
+}
+
+/* 🌟 UNIVERSAL CONTAINER (3D + GLOW) */
 .container {
     position: relative;
-    background: radial-gradient(circle at top left, #ffffff 0%, #f0f7ff 100%);
-    padding: 50px;
+    background: radial-gradient(circle at top left, #ffffff 0%, #e9f4ff 100%);
+    padding: 60px;
     border-radius: 25px;
-    box-shadow: 0 10px 35px rgba(0, 123, 255, 0.25), inset 0 0 25px rgba(255, 255, 255, 0.6);
     text-align: justify;
     max-width: 900px;
-    margin: 60px auto;
-    line-height: 1.8;
-    font-family: "Poppins", sans-serif;
+    margin: 70px auto;
+    box-shadow: 0 15px 40px rgba(0, 123, 255, 0.2),
+                inset 0 0 25px rgba(255, 255, 255, 0.5);
     overflow: hidden;
-    transition: all 0.4s ease;
+    animation: floatUpDown 6s ease-in-out infinite;
+    transform: perspective(1000px) translateZ(0);
 }
 
-/* 🌟 Glowing animated border – runs automatically */
+/* AUTO-GLOW BORDER */
 .container::before {
     content: "";
     position: absolute;
@@ -58,11 +93,11 @@ nav a.active {
     background-size: 400% 400%;
     z-index: -1;
     border-radius: 25px;
-    opacity: 0.8;
-    animation: glowingBorder 6s linear infinite;
+    opacity: 0.9;
+    animation: glowingBorder 5s linear infinite;
 }
 
-/* 🌤️ Soft glass blur layer */
+/* SOFT GLASS LAYER */
 .container::after {
     content: "";
     position: absolute;
@@ -70,213 +105,89 @@ nav a.active {
     background: rgba(255, 255, 255, 0.45);
     z-index: -1;
     border-radius: 25px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
 }
 
-/* 🌈 Continuous glowing border animation */
+/* ✨ ANIMATIONS */
 @keyframes glowingBorder {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-
-
-h1, h2 {
-    margin-bottom: 20px;
-    color: #2c3e50;
+@keyframes floatUpDown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
 }
 
+/* 🎯 HEADINGS & PARAGRAPHS */
+h1, h2, h3 {
+    color: #004aad;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+p {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 17px;
+}
+
+/* 🔹 LISTS */
 ul {
     list-style: none;
+    margin: 15px 0;
+    padding: 0;
 }
 
 ul li {
-    margin-bottom: 15px;
     position: relative;
-    padding-left: 20px;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    font-size: 16px;
 }
 
 ul li::before {
     content: "✔";
-    color: #3498db;
+    color: #007bff;
     position: absolute;
     left: 0;
+    font-weight: bold;
 }
 
+/* 🎀 THANKS TEXT */
+.thanks {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 25px;
+    color: #007bff;
+    font-size: 18px;
+}
+
+/* 🌌 FOOTER */
 footer {
-    background: #2c3e50;
+    background: #004aad;
     color: white;
     text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
+    padding: 22px 0;
+    margin-top: 50px;
+    font-size: 15px;
+    letter-spacing: 0.5px;
 }
 
-a {
-    color: #3498db;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
+/* 🔗 BUTTON STYLE */
 .btn {
     display: inline-block;
-    background-color: #3498db;
+    background-color: #007bff;
     color: white;
-    padding: 12px 24px;
-    border-radius: 5px;
+    padding: 12px 25px;
+    border-radius: 6px;
     text-decoration: none;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: 0.3s;
 }
 
 .btn:hover {
-    background-color: #2980b9;
-}
-
-/* Photo section - centered */
-.photo-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;              /* space between blue lines and photo */
-    margin-top: 30px;       /* space from top */
-    margin-bottom: 10px;    /* space below photo */
-}
-
-/* Blue side lines */
-.blue-line {
-    flex: 1;
-    border: none;
-    height: 3px;
-    background-color: #007bff;
-    max-width: 180px;       /* limit line length */
-}
-
-/* Profile image (circle photo) */
-.profile-img {
-    width: 170px;           /* circle size */
-    height: 170px;
-    border-radius: 50%;
-    border: 4px solid #007bff;
-    object-fit: cover;      /* ensures face fits properly inside circle */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-/* Smooth hover effect */
-.profile-img:hover {
+    background-color: #0056b3;
     transform: scale(1.05);
 }
-
-/* Optional: reduce gap between name and photo */
-header h1 {
-    margin-top: 5px;
-}
-
-.about-section {
-    position: relative;
-    background: radial-gradient(circle at top left, #ffffff 0%, #eaf5ff 100%);
-    padding: 55px;
-    border-radius: 25px;
-    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.15), inset 0 0 25px rgba(255, 255, 255, 0.6);
-    text-align: justify;
-    max-width: 900px;
-    margin: 60px auto;
-    line-height: 1.8;
-    font-family: "Poppins", sans-serif;
-    overflow: hidden;
-    transition: all 0.4s ease;
-}
-
-/* Glowing animated gradient border — runs automatically */
-.about-section::before {
-    content: "";
-    position: absolute;
-    inset: -3px;
-    background: linear-gradient(60deg, #007bff, #00e0ff, #8f00ff, #007bff);
-    background-size: 400% 400%;
-    z-index: -1;
-    border-radius: 25px;
-    opacity: 0.7;
-    animation: glowingBorder 6s linear infinite;
-}
-
-/* Soft glass effect layer */
-.about-section::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(255, 255, 255, 0.4);
-    z-index: -1;
-    border-radius: 25px;
-    backdrop-filter: blur(10px);
-}
-
-/* Animation for continuous glowing */
-@keyframes glowingBorder {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* Optional: light floating particles in background */
-.about-section::before,
-.about-section::after {
-    pointer-events: none;
-}
-
-.about-section h2 {
-    text-align: center;
-    color: #007bff;
-    font-size: 30px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.about-section p {
-    color: #333;
-    font-size: 17px;
-    margin-bottom: 15px;
-}
-
-.goal-section h3 {
-    color: #0056b3;
-    margin-bottom: 10px;
-    font-size: 22px;
-    border-left: 4px solid #007bff;
-    padding-left: 10px;
-}
-
-.goal-section li {
-    margin-bottom: 8px;
-    font-size: 16px;
-    color: #444;
-}
-
-.thanks {
-    text-align: center;
-    font-weight: 600;
-    margin-top: 25px;
-    color: #007bff;
-    font-size: 18px;
-}
-
-.thanks {
-    text-align: center;
-    font-weight: 600;
-    margin-top: 25px;
-    color: #007bff;
-    font-size: 18px;
-}
-
-
-.about-section:hover {
-  transform: scale(1.01);
-  box-shadow: 0 10px 35px rgba(0, 123, 255, 0.3);
-}
-
-
-
