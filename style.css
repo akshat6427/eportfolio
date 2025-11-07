@@ -95,45 +95,47 @@ a:hover {
     background-color: #2980b9;
 }
 
-/* === Profile Section === */
+/* Photo section - centered */
 .photo-section {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 15px !important;
-    margin-top: 40px !important;   /* upar se thoda space */
-    margin-bottom: 5px !important; /* name ke sath gap kam */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;              /* space between blue lines and photo */
+    margin-top: 30px;       /* space from top */
+    margin-bottom: 10px;    /* space below photo */
 }
 
+/* Blue side lines */
 .blue-line {
-    flex: 1 !important;
-    border: none !important;
-    height: 3px !important;
-    background-color: #007bff !important;
-    max-width: 180px !important;
+    flex: 1;
+    border: none;
+    height: 3px;
+    background-color: #007bff;
+    max-width: 180px;       /* limit line length */
 }
 
+/* Profile image (circle photo) */
 .profile-img {
-    width: 180px !important;       /* bada circle */
-    height: 180px !important;
-    border-radius: 50% !important;
-    border: 4px solid #007bff !important;
-    object-fit: cover !important;  /* image circle ke andar fit hogi */
-    background-color: white !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
-    transition: transform 0.3s ease !important;
+    width: 170px;           /* circle size */
+    height: 170px;
+    border-radius: 50%;
+    border: 4px solid #007bff;
+    object-fit: cover;      /* ensures face fits properly inside circle */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
+/* Smooth hover effect */
 .profile-img:hover {
     transform: scale(1.05);
 }
 
+/* Optional: reduce gap between name and photo */
 header h1 {
-    margin-top: 8px !important;
-    margin-bottom: 10px !important;
-    line-height: 1.2 !important;
-    text-align: center !important;
+    margin-top: 5px;
 }
+
+
 
 
 
