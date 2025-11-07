@@ -166,6 +166,57 @@ header h1 {
     margin-top: 5px;
 }
 
+.about-section {
+    position: relative;
+    background: radial-gradient(circle at top left, #ffffff 0%, #eaf5ff 100%);
+    padding: 55px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.15), inset 0 0 25px rgba(255, 255, 255, 0.6);
+    text-align: justify;
+    max-width: 900px;
+    margin: 60px auto;
+    line-height: 1.8;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+/* Glowing animated gradient border — runs automatically */
+.about-section::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    background: linear-gradient(60deg, #007bff, #00e0ff, #8f00ff, #007bff);
+    background-size: 400% 400%;
+    z-index: -1;
+    border-radius: 25px;
+    opacity: 0.7;
+    animation: glowingBorder 6s linear infinite;
+}
+
+/* Soft glass effect layer */
+.about-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.4);
+    z-index: -1;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+}
+
+/* Animation for continuous glowing */
+@keyframes glowingBorder {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Optional: light floating particles in background */
+.about-section::before,
+.about-section::after {
+    pointer-events: none;
+}
 
 .about-section h2 {
     text-align: center;
@@ -182,14 +233,6 @@ header h1 {
     margin-bottom: 15px;
 }
 
-.about-section strong {
-    color: #007bff;
-}
-
-.goal-section {
-    margin-top: 25px;
-}
-
 .goal-section h3 {
     color: #0056b3;
     margin-bottom: 10px;
@@ -198,14 +241,18 @@ header h1 {
     padding-left: 10px;
 }
 
-.goal-section ul {
-    margin: 0 0 20px 25px;
-}
-
 .goal-section li {
     margin-bottom: 8px;
     font-size: 16px;
     color: #444;
+}
+
+.thanks {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 25px;
+    color: #007bff;
+    font-size: 18px;
 }
 
 .thanks {
