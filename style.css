@@ -107,37 +107,32 @@ a:hover {
     border: 4px solid #3498db;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
-/* Center the whole photo section */
 .photo-section {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;          /* space between lines and image */
-    height: 60vh;       /* centers vertically in screen */
+    gap: 15px;
+    margin-bottom: 15px;
 }
 
-/* Blue horizontal line */
 .blue-line {
-    flex: 1;            /* make both lines equal length */
+    flex: 1;
     border: none;
     height: 3px;
-    background-color: #007bff; /* blue color */
-    max-width: 200px;   /* adjust line length */
+    background-color: #007bff;
+    max-width: 200px;
 }
 
-/* Profile image styling */
 .profile-img {
-    width: 130px;       /* adjust size smaller/larger */
-    height: 130px;
-    border-radius: 50%; /* circular photo */
-    object-fit: cover;  /* crops perfectly */
-    border: 4px solid #007bff;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 3px solid #007bff;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
 }
 
-/* Hover animation */
 .profile-img:hover {
     transform: scale(1.05);
 }
-
